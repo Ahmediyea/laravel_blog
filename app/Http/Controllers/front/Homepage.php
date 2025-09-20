@@ -19,7 +19,7 @@ class Homepage extends Controller
         if(Config::find(1)->active==0){
              redirect()->to('site-bakımda')->send();
     }
-
+        view()->share('config', Config::find(1));
         view()->share('pages',$pages = Page::where('status', 1)->orderBy('order','asc')->get());
         view()->share('categories',$categories = Category::where('status',1)->get());
     }
@@ -88,7 +88,7 @@ class Homepage extends Controller
             return redirect()->route('contact')->withErrors($validate)->withInput();
         }
 
-    
+
 
 
 

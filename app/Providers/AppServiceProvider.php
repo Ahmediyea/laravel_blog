@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
 {
     // Tüm view'lara $config değişkenini gönder
-    view()->share('config', Config::find(1));
+    
 
     // Route resource isimlerini Türkçeleştir
     Route::resourceVerbs([
