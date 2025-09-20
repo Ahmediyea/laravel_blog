@@ -18,7 +18,7 @@ class isAdmin
     public function handle(Request $request, Closure $next): Response
     {
        if(!Auth::check()) {
-            return redirect()->route('admin.login')->withErrors('Yetkisiz erişim');
+            return redirect()->route('admin.login');
         };
         return $next($request);
     }
